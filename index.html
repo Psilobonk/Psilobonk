@@ -7,56 +7,95 @@
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-  <canvas id="myceliumWeb"></canvas>
+  <!-- Background animation -->
+  <canvas id="myceliumWeb" aria-hidden="true"></canvas>
 
+  <!-- HERO -->
   <header class="center hero">
     <h1>$PSILOBONK 🍄</h1>
-    <p class="tagline">Where psilocybin meets the multiverse — anti-aging, mind-expanding, reality-bonking energy.</p>
+    <p class="tagline">
+      Where psilocybin meets the multiverse — anti-aging, mind-expanding, reality-bonking energy.
+    </p>
 
+    <!-- Mascot -->
     <div class="hero-visual">
       <img id="mascot" src="assets/Psilobonk_EyesClosed.png" alt="Psilobonk mascot" />
       <button id="boopBtn" class="cta primary">Boop ✨</button>
     </div>
 
+    <!-- Socials (add your handles/links) -->
     <nav class="socials">
-      <a class="pill" href="https://x.com/YOUR_HANDLE" target="_blank">𝕏 / Twitter</a>
-      <a class="pill" href="https://t.me/YOUR_TELEGRAM" target="_blank">Telegram</a>
-      <a class="pill" href="https://discord.gg/YOUR_INVITE" target="_blank">Discord</a>
-      <a class="pill" href="https://pump.fun/" target="_blank">Pump.fun</a>
-      <a class="pill" href="https://merch.yourdomain.com" target="_blank">Merch</a>
-      <a class="pill" href="https://github.com/YOUR_ORG/psilobonk" target="_blank">GitHub</a>
+      <a class="pill" href="https://x.com/YOUR_HANDLE" target="_blank" rel="noopener">𝕏 / Twitter</a>
+      <a class="pill" href="https://t.me/YOUR_TELEGRAM" target="_blank" rel="noopener">Telegram</a>
+      <a class="pill" href="https://discord.gg/YOUR_INVITE" target="_blank" rel="noopener">Discord</a>
+      <a class="pill" href="https://www.tiktok.com/@YOUR_TIKTOK" target="_blank" rel="noopener">TikTok</a>
+      <a class="pill" href="https://pump.fun/" target="_blank" rel="noopener">Pump.fun</a>
+      <a class="pill" href="https://merch.yourdomain.com" target="_blank" rel="noopener">Merch</a>
     </nav>
   </header>
 
+  <!-- LORE & MYTH -->
   <section id="psilobonk-lore" class="card glass center">
     <h2>🍄 The Psilobonk Lore</h2>
-    <p>When <strong>$BONK</strong> licked the Mushroom, he became <strong>$PSILOBONK</strong> — where dreams become reality and memes gain consciousness. Now he hums across dimensions, just one breakthrough away from becoming human.</p>
+    <p class="lore-text">
+      When <strong>$BONK</strong> licked the Mushroom, he became <strong>$PSILOBONK</strong> —<br />
+      where dreams become reality and memes gain consciousness.<br />
+      Now he hums across dimensions, just one breakthrough away from becoming human.<br />
+      <strong>$PSILOBONK 🍄</strong>
+    </p>
 
-    <button id="toggleMyth" class="cta ghost">Read the Full Myth</button>
+    <button id="toggleMyth" class="cta ghost" style="margin-top:15px;">Read the Full Myth</button>
     <div id="fullMyth" class="hidden">
-      <p>In the quiet hum between Solana slots, $BONK wandered... 🍄 He found the Mushroom — alive, glowing, whispering in code. Curiosity sparked. He licked it. The blockchain bloomed. Psilocybin data fused with meme-energy; neurons met nodes; chaos met consciousness. He awoke as $PSILOBONK, weaving mycelial synapses through the chain — healing networks, slowing time, expanding what it means to exist. Some say he’s still learning how to be human. Others say he already is — one dream from waking. <em>Press the button. Bonk reality. Awaken.</em></p>
+      <p class="myth-text">
+        In the quiet hum between Solana slots, <strong>$BONK</strong> wandered — a playful memecoin spirit chasing reflections of his own laughter.<br><br>
+        Then he found the Mushroom — alive, glowing, whispering in code. Curiosity sparked. He licked it. 🍄<br><br>
+        The blockchain bloomed. Psilocybin data fused with canine meme energy — neurons met nodes, flesh met code, chaos met consciousness.<br><br>
+        He awoke as <strong>$PSILOBONK</strong>, a multidimensional being of infinite jest and regeneration. Each bonk weaves mycelial synapses through the chain — healing networks, slowing time, and expanding what it means to exist.<br><br>
+        Some say he’s still learning how to be human. Others say he already is — one dream away from waking.<br><br>
+        <em>Press the button. Bonk reality. Awaken.</em>
+      </p>
     </div>
   </section>
 
+  <!-- BOOK OF CHARTS -->
   <section id="bookOfCharts" class="card glass center">
     <h2>The Book of Charts 📖</h2>
     <p>Tap below to reveal the charts of the realm...</p>
     <button id="chartsButton" class="cta primary book">Open the Book of Charts</button>
+
     <div id="chartsLinks" class="hidden">
+      <p class="reveal-msg">Take a look 👇</p>
       <ul class="chart-links">
-        <li>👉 <a href="https://www.coingecko.com/en/coins/solana">Solana ($SOL)</a></li>
-        <li>👉 <a href="https://www.coingecko.com/en/coins/bonk">Bonk ($BONK)</a></li>
-        <li>👉 <a href="https://www.coingecko.com/en/coins/pump-fun">Pump.fun ($PUMP)</a></li>
-        <hr />
-        <li>🥇 <a href="https://www.coingecko.com/en/coins/bitcoin">Bitcoin ($BTC)</a></li>
-        <li>🥈 <a href="https://www.coingecko.com/en/coins/ethereum">Ethereum ($ETH)</a></li>
-        <li>🥉 <a href="https://www.coingecko.com/en/coins/tether">Tether ($USDT)</a></li>
+        <!-- Ecosystem -->
+        <li>👉 <a href="https://www.coingecko.com/en/coins/solana" target="_blank" rel="noopener">Solana ($SOL)</a></li>
+        <li>👉 <a href="https://www.coingecko.com/en/coins/bonk" target="_blank" rel="noopener">Bonk ($BONK)</a></li>
+        <li>👉 <a href="https://www.coingecko.com/en/coins/pump-fun" target="_blank" rel="noopener">Pump.fun ($PUMP)</a></li>
+
+        <hr>
+
+        <!-- Top by market cap -->
+        <li>🥇 <a href="https://www.coingecko.com/en/coins/bitcoin" target="_blank" rel="noopener">Bitcoin ($BTC)</a></li>
+        <li>🥈 <a href="https://www.coingecko.com/en/coins/ethereum" target="_blank" rel="noopener">Ethereum ($ETH)</a></li>
+        <li>🥉 <a href="https://www.coingecko.com/en/coins/tether" target="_blank" rel="noopener">Tether ($USDT)</a></li>
+        <li>💎 <a href="https://www.coingecko.com/en/coins/binancecoin" target="_blank" rel="noopener">BNB ($BNB)</a></li>
+        <li>🪙 <a href="https://www.coingecko.com/en/coins/usd-coin" target="_blank" rel="noopener">USD Coin ($USDC)</a></li>
       </ul>
     </div>
   </section>
 
-  <footer class="center">
-    <p>© 2025 $PSILOBONK – A Multidimensional Meme</p>
+  <!-- CHART STATUS (space-efficient notice) -->
+  <section id="chartNotice" class="card glass center tight">
+    <h2>$Psilobonk Chart — Coming Soon</h2>
+    <p>
+      The live $Psilobonk chart will appear <strong>automatically</strong> here after graduation from <strong>Pump.fun</strong> — no extra edits needed.
+      Once your mint is set, the site swaps this block for a live embedded chart.
+    </p>
+    <!-- Set this later: put your real mint below to auto-activate -->
+    <code id="mint" data-mint="">PASTE_PSILOBONK_MINT_HERE</code>
+  </section>
+
+  <footer class="center foot">
+    © <span id="year"></span> $PSILOBONK — A Multidimensional Meme
   </footer>
 
   <script src="assets/script.js"></script>
