@@ -64,4 +64,28 @@ chartsBtn?.addEventListener("click", () => {
   chartsBtn.textContent = isHidden
     ? "Open the Book of Charts"
     : "Close the Book of Charts";
-});
+}); /* ===== Mascot boop (toggle eyes open/closed) ===== */
+(() => {
+  const img = document.getElementById('mascot');
+  const btn = document.getElementById('boopBtn');
+  if (!img || !btn) return;
+
+  const closed = 'assets/Psilobonk_EyesClosed.png';
+  const open = 'assets/Psilobonk_EyesOpen.png';
+  let isOpen = false;
+
+  const boop = () => {
+    isOpen = !isOpen;
+    img.src = isOpen ? open : closed;
+
+    // gentle pulse on boop
+    img.style.transition = 'transform 160ms ease';
+    img.style.transform = 'scale(1.02)';
+    setTimeout(() => (img.style.transform = 'scale(1)'), 160);
+  };
+
+  btn.addEventListener('click', boop);
+
+  // also boop on image tap (mobile delight)
+  img.addEventListener('click', boop);
+})();
