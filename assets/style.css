@@ -1,148 +1,150 @@
-/* Base */
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-  background: #000;
-  color: #eaffea;
-  overflow-x: hidden;
-}
-.center { text-align: center; }
+/* =========================
+   Psilobonk – Site Styles
+   ========================= */
 
-/* Cards & glass */
-.card {
-  margin: 28px auto;
-  padding: 22px 18px;
-  max-width: 760px;
-  border-radius: 18px;
-  background: rgba(0, 20, 10, 0.6);
-  box-shadow: 0 0 20px #003311aa, 0 0 40px #00ff8833;
-}
-.glass { backdrop-filter: blur(6px); }
-.card.tight { max-width: 720px; padding: 18px 16px; }
-
-/* Header / hero */
-.hero { margin: 22px auto 8px; padding: 10px 16px; }
-h1 {
-  margin: 0 0 4px;
-  font-size: clamp(28px, 8vw, 44px);
-  color: #aaffcc;
-  text-shadow: 0 0 12px #00ff8844, 0 0 25px #00ffaa55;
-}
-.tagline {
-  color: #99ffbb;
-  font-size: 0.98rem;
-  margin: 0 auto 10px;
-  max-width: 680px;
-  text-shadow: 0 0 8px #00ffaa55;
+/* -- Settings */
+:root{
+  --brand1:#7b2cf0;   /* Psilobonk purple */
+  --brand2:#00ffa3;   /* Solana green accent */
+  --ink:#e9e6ff;      /* light text */
+  --ink-dim:#cfc9ff;
+  --bg:#0a0614;       /* safety bg behind video */
+  --maxw:1100px;
 }
 
-/* Mascot */
-.hero-visual {
-  margin: 12px auto 10px;
-  display: grid;
-  place-items: center;
-  gap: 10px;
-}
-#mascot {
-  width: min(420px, 82vw);
-  aspect-ratio: 1 / 1;
-  object-fit: contain;
-  border-radius: 16px;
-  background: radial-gradient(120% 120% at 50% 40%, #002a16 0%, #000 90%);
-  box-shadow:
-    0 0 24px #00ff8840,
-    0 0 80px #00ff8840,
-    inset 0 0 18px #00ff8850;
-}
-.cta.primary {
-  background: linear-gradient(90deg, #0ea05a, #00ff99, #118d5b);
-  background-size: 300% 300%;
-  border: 0; color: #002015;
-  padding: 10px 18px; border-radius: 999px; font-weight: 800;
-  box-shadow: 0 10px 30px #00ff8844;
-  animation: hueShift 8s linear infinite;
-}
-.cta.ghost {
-  background: transparent; color: #a6ffc7;
-  border: 1px solid #00ff99; padding: 8px 14px; border-radius: 999px;
+/* -- Resets */
+*{box-sizing:border-box}
+html,body{height:100%}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding-left:env(safe-area-inset-left);
+  padding-right:env(safe-area-inset-right);
 }
 
-/* Socials */
-.socials {
-  margin: 12px auto 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  gap: 10px;
-  max-width: 860px;
-}
-.socials .pill {
-  display: inline-block;
-  text-align: center;
-  padding: 10px 14px;
-  border-radius: 999px;
-  border: 1px solid #00ff99;
-  color: #eaffea;
-  text-decoration: none;
-  backdrop-filter: blur(4px);
-  background: rgba(0, 30, 18, 0.45);
-  box-shadow: 0 0 20px #00ff8850;
-  transition: transform .15s ease, box-shadow .15s ease, color .15s ease;
-}
-.socials .pill:hover { transform: translateY(-1px); color: #00ffaa; box-shadow: 0 0 28px #00ffaa66; }
-/* TikTok flair on hover */
-.socials .pill[href*="tiktok"]:hover { background: #ff0050; color: #fff; border-color: #fff; }
-
-/* Lore */
-#psilobonk-lore { border: 1px solid #004d26; box-shadow: 0 0 25px #00ff8844, 0 0 60px #004d26aa; }
-#psilobonk-lore h2 {
-  font-size: 1.35rem;
-  color: #a6ffc7;
-  text-shadow: 0 0 15px #00ff9955, 0 0 30px #00ffaa33;
-}
-.lore-text {
-  font-size: 1.02rem;
-  color: #c8ffd6;
-  text-shadow: 0 0 8px #00ffbb44, 0 0 16px #00ff9955;
-}
-.myth-text {
-  margin-top: 14px;
-  color: #bafdc9;
-  font-size: 0.98rem;
-  text-shadow: 0 0 8px #00994455, 0 0 18px #00ffbb33;
-}
-.hidden { display: none; }
-
-/* Book of Charts */
-#bookOfCharts h2 { margin-top: 0; }
-#chartsLinks.hidden { display: none; }
-.chart-links { list-style: none; padding: 0; margin: 10px auto 0; text-align: left; max-width: 680px; }
-.chart-links li { margin: 8px 0; font-size: 16px; transition: transform .2s ease, text-shadow .2s ease; }
-.chart-links li:hover { transform: translateX(4px); text-shadow: 0 0 8px #7a5cff88; }
-.chart-links a { color: #eaffff; text-decoration: none; }
-.chart-links a:hover { color: #00ffaa; text-decoration: underline; }
-
-/* Chart notice (compact, efficient) */
-#chartNotice h2 { margin: 6px 0 8px; }
-#chartNotice p  { margin: 0 0 10px; opacity: 0.92; }
-#chartNotice code {
-  display: inline-block; margin-top: 6px; padding: 6px 10px; border-radius: 8px;
-  border: 1px solid #00ff99; background: rgba(0,255,153,0.08); color: #a6ffc7; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+/* ---------- Generic layout ---------- */
+.site-header,
+.site-footer{
+  max-width:var(--maxw);
+  margin:auto;
+  padding:20px clamp(16px,4vw,28px);
 }
 
-/* Footer */
-.foot { margin: 26px auto 50px; opacity: 0.9; font-size: 0.9rem; color: #9effc9; text-shadow: 0 0 10px #00ffaa66; }
-
-/* Background canvas */
-#myceliumWeb {
-  position: fixed; inset: 0; width: 100%; height: 100%; z-index: -1;
-  background: radial-gradient(circle at center, #001408 0%, #000 100%);
-  filter: brightness(0.85) saturate(1.2);
+.site-header h1{
+  margin:0 0 6px;
+  font-size:clamp(28px,6vw,40px);
+  letter-spacing:.5px;
+}
+.site-header p{
+  margin:0;
+  color:var(--ink-dim);
 }
 
-/* Animations */
-@keyframes hueShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* ---------- Sections with video background ---------- */
+.video-section{
+  position:relative;
+  min-height:60vh;
+  display:flex;
+  align-items:center;
+  isolation:isolate; /* keep overlays local */
+}
+
+.video-section .video-wrap{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+  z-index:0;
+}
+
+/* Use object-fit cover so the video fills each section */
+.video-section .bg-video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  filter:saturate(1.15) brightness(.9) contrast(1.05);
+}
+
+/* Readability overlay (subtle gradient + blur) */
+.video-section::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(1200px 600px at 50% 0%, rgba(10,6,20,.15), transparent 60%),
+    linear-gradient(180deg, rgba(10,6,20,.35), rgba(10,6,20,.55));
+  backdrop-filter:saturate(1.05) blur(2px);
+  z-index:1;
+}
+
+/* Foreground content */
+.section-content{
+  position:relative;
+  z-index:2;
+  width:100%;
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:48px clamp(16px,4vw,28px);
+  text-align:center;
+}
+
+.section-content h2{
+  margin:0 0 10px;
+  font-size:clamp(24px,5.5vw,36px);
+}
+.section-content p{
+  margin:0 auto;
+  max-width:780px;
+  color:var(--ink-dim);
+}
+
+/* ---------- Mascot ---------- */
+.mascot-wrap{ display:flex; flex-direction:column; align-items:center; gap:14px; }
+
+.mascot{
+  width:min(280px,55vw);
+  height:auto;
+  image-rendering:auto;
+  user-select:none;
+  -webkit-user-drag:none;
+  filter: drop-shadow(0 10px 24px rgba(0,0,0,.35));
+}
+
+/* ---------- Buttons (optional for Book of Charts) ---------- */
+.btn{
+  display:inline-block;
+  margin:14px 8px 0;
+  padding:12px 18px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:600;
+  color:#0a0614;
+  background:linear-gradient(135deg,var(--brand2),var(--brand1));
+  box-shadow:0 6px 16px rgba(0,0,0,.35);
+  transition:transform .08s ease, box-shadow .08s ease, filter .08s ease;
+}
+.btn:active{ transform:scale(.98); filter:brightness(.95); }
+
+/* ---------- Footer ---------- */
+.site-footer{
+  color:var(--ink-dim);
+  text-align:center;
+  border-top:1px solid rgba(255,255,255,.06);
+}
+
+/* ---------- Small screens tweaks ---------- */
+@media (max-width:480px){
+  .video-section{ min-height:66vh; }
+  .section-content{ padding-top:56px; padding-bottom:56px; }
+}
+
+/* ---------- Prefers-reduced-motion ---------- */
+@media (prefers-reduced-motion:reduce){
+  .video-section .bg-video{ animation:none; }
+  .video-section .bg-video{ filter:none; }
 }
