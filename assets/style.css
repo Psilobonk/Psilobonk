@@ -1,150 +1,154 @@
-/* =========================
-   Psilobonk – Site Styles
-   ========================= */
-
-/* -- Settings */
-:root{
-  --brand1:#7b2cf0;   /* Psilobonk purple */
-  --brand2:#00ffa3;   /* Solana green accent */
-  --ink:#e9e6ff;      /* light text */
-  --ink-dim:#cfc9ff;
-  --bg:#0a0614;       /* safety bg behind video */
-  --maxw:1100px;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Courier New", monospace;
+  background: #000;
+  color: #eaffea;
+  overflow-x: hidden;
+}
+.center {
+  text-align: center;
+}
+.card {
+  margin: 50px auto;
+  padding: 30px 20px;
+  max-width: 700px;
+  border-radius: 20px;
+  background: rgba(0, 20, 10, 0.6);
+  box-shadow: 0 0 20px #003311aa, 0 0 40px #00ff8833;
+}
+.glass {
+  backdrop-filter: blur(6px);
+}
+h1 {
+  font-size: 2.2rem;
+  color: #aaffcc;
+  text-shadow: 0 0 12px #00ff8844, 0 0 25px #00ffaa55;
+}
+.tagline {
+  color: #99ffbb;
+  font-size: 1rem;
+  margin-top: -8px;
+  text-shadow: 0 0 8px #00ffaa55;
 }
 
-/* -- Resets */
-*{box-sizing:border-box}
-html,body{height:100%}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
-  color:var(--ink);
-  background:var(--bg);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  padding-left:env(safe-area-inset-left);
-  padding-right:env(safe-area-inset-right);
+/* Mycelium web background */
+#myceliumWeb {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(circle at center, #001408 0%, #000 100%);
+  filter: brightness(0.8) saturate(1.2);
 }
 
-/* ---------- Generic layout ---------- */
-.site-header,
-.site-footer{
-  max-width:var(--maxw);
-  margin:auto;
-  padding:20px clamp(16px,4vw,28px);
+/* Lore section */
+#psilobonk-lore {
+  border: 1px solid #004d26;
+  box-shadow: 0 0 25px #00ff8844, 0 0 60px #004d26aa;
+}
+#psilobonk-lore h2 {
+  color: #a6ffc7;
+  text-shadow: 0 0 15px #00ff9955, 0 0 30px #00ffaa33;
+}
+.lore-text {
+  font-size: 1.1rem;
+  color: #c8ffd6;
+  text-shadow: 0 0 8px #00ffbb44, 0 0 16px #00ff9955;
+}
+.myth-text {
+  color: #bafdc9;
+  font-size: 1rem;
+  text-shadow: 0 0 8px #00994455, 0 0 18px #00ffbb33;
+}
+#toggleMyth {
+  font-size: 0.9rem;
+  color: #a6ffc7;
+  border: 1px solid #00ff99;
+  background: transparent;
+  padding: 6px 16px;
+  border-radius: 20px;
+}
+#toggleMyth:hover {
+  color: #00ffaa;
+  text-shadow: 0 0 12px #00ffaa88;
+}
+.hidden { display: none; }
+
+/* Book of Charts */
+#chartsLinks.hidden { display: none; }
+.chart-links {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+.chart-links li {
+  margin: 10px 0;
+  font-size: 16px;
+  transition: transform .2s ease, text-shadow .2s ease;
+}
+.chart-links li:hover {
+  transform: translateX(4px);
+  text-shadow: 0 0 8px #7a5cff88;
+}
+.chart-links a {
+  color: #eaffff;
+  text-decoration: none;
+}
+.chart-links a:hover {
+  color: #00ffaa;
+  text-decoration: underline;
+}
+.cta.primary.book {
+  background: linear-gradient(90deg, #004d26, #00ff99, #006633);
+  background-size: 300% 300%;
+  animation: hueShift 8s linear infinite;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: #fff;
+  box-shadow: 0 0 25px #00ff8844;
+}
+@keyframes hueShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-.site-header h1{
-  margin:0 0 6px;
-  font-size:clamp(28px,6vw,40px);
-  letter-spacing:.5px;
+/* Coming soon chart */
+.chart-placeholder {
+  border: 2px dashed #ffffff33;
+  border-radius: 16px;
+  padding: 40px 20px;
+  background: radial-gradient(circle at center, #1a1f2b 0%, #0a0c12 100%);
+  box-shadow: inset 0 0 40px #00ff8844, 0 0 40px #00ff8844;
+  position: relative;
 }
-.site-header p{
-  margin:0;
-  color:var(--ink-dim);
+.glow-circle {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px; height: 120px;
+  background: radial-gradient(circle, #00ff8844, #00e0ff11);
+  border-radius: 50%;
+  animation: pulseGlow 2s infinite alternate ease-in-out;
+  filter: blur(20px);
 }
+@keyframes pulseGlow {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+  100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.2; }
+}
+.soon-text {
+  font-weight: 800;
+  color: #00ffaa;
+  text-shadow: 0 0 15px #00ffaa88;
+}
+.hint { color: #ffffff99; font-size: 0.9rem; }
 
-/* ---------- Sections with video background ---------- */
-.video-section{
-  position:relative;
-  min-height:60vh;
-  display:flex;
-  align-items:center;
-  isolation:isolate; /* keep overlays local */
-}
-
-.video-section .video-wrap{
-  position:absolute;
-  inset:0;
-  overflow:hidden;
-  z-index:0;
-}
-
-/* Use object-fit cover so the video fills each section */
-.video-section .bg-video{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center;
-  filter:saturate(1.15) brightness(.9) contrast(1.05);
-}
-
-/* Readability overlay (subtle gradient + blur) */
-.video-section::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(1200px 600px at 50% 0%, rgba(10,6,20,.15), transparent 60%),
-    linear-gradient(180deg, rgba(10,6,20,.35), rgba(10,6,20,.55));
-  backdrop-filter:saturate(1.05) blur(2px);
-  z-index:1;
-}
-
-/* Foreground content */
-.section-content{
-  position:relative;
-  z-index:2;
-  width:100%;
-  max-width:var(--maxw);
-  margin:0 auto;
-  padding:48px clamp(16px,4vw,28px);
-  text-align:center;
-}
-
-.section-content h2{
-  margin:0 0 10px;
-  font-size:clamp(24px,5.5vw,36px);
-}
-.section-content p{
-  margin:0 auto;
-  max-width:780px;
-  color:var(--ink-dim);
-}
-
-/* ---------- Mascot ---------- */
-.mascot-wrap{ display:flex; flex-direction:column; align-items:center; gap:14px; }
-
-.mascot{
-  width:min(280px,55vw);
-  height:auto;
-  image-rendering:auto;
-  user-select:none;
-  -webkit-user-drag:none;
-  filter: drop-shadow(0 10px 24px rgba(0,0,0,.35));
-}
-
-/* ---------- Buttons (optional for Book of Charts) ---------- */
-.btn{
-  display:inline-block;
-  margin:14px 8px 0;
-  padding:12px 18px;
-  border-radius:12px;
-  text-decoration:none;
-  font-weight:600;
-  color:#0a0614;
-  background:linear-gradient(135deg,var(--brand2),var(--brand1));
-  box-shadow:0 6px 16px rgba(0,0,0,.35);
-  transition:transform .08s ease, box-shadow .08s ease, filter .08s ease;
-}
-.btn:active{ transform:scale(.98); filter:brightness(.95); }
-
-/* ---------- Footer ---------- */
-.site-footer{
-  color:var(--ink-dim);
-  text-align:center;
-  border-top:1px solid rgba(255,255,255,.06);
-}
-
-/* ---------- Small screens tweaks ---------- */
-@media (max-width:480px){
-  .video-section{ min-height:66vh; }
-  .section-content{ padding-top:56px; padding-bottom:56px; }
-}
-
-/* ---------- Prefers-reduced-motion ---------- */
-@media (prefers-reduced-motion:reduce){
-  .video-section .bg-video{ animation:none; }
-  .video-section .bg-video{ filter:none; }
+footer {
+  margin-top: 50px;
+  color: #00ffaa;
+  font-size: 0.8rem;
+  text-shadow: 0 0 10px #00ffaa66;
 }
