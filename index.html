@@ -1,124 +1,103 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Psilobonk</title>
-
-  <!-- Site styles -->
-  <link rel="stylesheet" href="assets/style.css">
-  <meta name="description" content="Official Psilobonk — the multidimensional shroom dog on Solana." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Psilobonk 🍄 – Where Dreams Become Reality</title>
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
-
 <body>
-  <!-- Header / Hero (optional static area; no video here) -->
-  <header class="site-header">
-    <h1>Psilobonk</h1>
-    <p>The multidimensional shroom dog on Solana.</p>
+  <!-- Background animation -->
+  <canvas id="myceliumWeb" aria-hidden="true"></canvas>
+
+  <!-- HERO -->
+  <header class="center hero">
+    <h1>$PSILOBONK 🍄</h1>
+    <p class="tagline">
+      Where psilocybin meets the multiverse — anti-aging, mind-expanding, reality-bonking energy.
+    </p>
+
+    <!-- Mascot -->
+    <div class="hero-visual">
+      <img id="mascot" src="assets/Psilobonk_EyesClosed.png" alt="Psilobonk mascot" />
+      <button id="boopBtn" class="cta primary">Boop ✨</button>
+    </div>
+
+    <!-- Socials (add your handles/links) -->
+    <nav class="socials">
+      <a class="pill" href="https://x.com/YOUR_HANDLE" target="_blank" rel="noopener">𝕏 / Twitter</a>
+      <a class="pill" href="https://t.me/YOUR_TELEGRAM" target="_blank" rel="noopener">Telegram</a>
+      <a class="pill" href="https://discord.gg/YOUR_INVITE" target="_blank" rel="noopener">Discord</a>
+      <a class="pill" href="https://www.tiktok.com/@YOUR_TIKTOK" target="_blank" rel="noopener">TikTok</a>
+      <a class="pill" href="https://pump.fun/" target="_blank" rel="noopener">Pump.fun</a>
+      <a class="pill" href="https://merch.yourdomain.com" target="_blank" rel="noopener">Merch</a>
+    </nav>
   </header>
 
-  <!-- LORE (section with video background) -->
-  <section id="lore" class="video-section">
-    <div class="video-wrap">
-      <video class="bg-video" autoplay muted loop playsinline preload="auto" poster="">
-        <source src="assets/psilobonk_bg.mp4" type="video/mp4">
-        <source src="assets/psilobonk_bg.mov" type="video/quicktime">
-      </video>
-    </div>
-    <div class="section-content">
-      <h2>Psilobonk Lore</h2>
-      <p>Bonk licked the mushroom 🍄 and evolved — colour, energy, imagination. Welcome to Psilobonk.</p>
+  <!-- LORE & MYTH -->
+  <section id="psilobonk-lore" class="card glass center">
+    <h2>🍄 The Psilobonk Lore</h2>
+    <p class="lore-text">
+      When <strong>$BONK</strong> licked the Mushroom, he became <strong>$PSILOBONK</strong> —<br />
+      where dreams become reality and memes gain consciousness.<br />
+      Now he hums across dimensions, just one breakthrough away from becoming human.<br />
+      <strong>$PSILOBONK 🍄</strong>
+    </p>
+
+    <button id="toggleMyth" class="cta ghost" style="margin-top:15px;">Read the Full Myth</button>
+    <div id="fullMyth" class="hidden">
+      <p class="myth-text">
+        In the quiet hum between Solana slots, <strong>$BONK</strong> wandered — a playful memecoin spirit chasing reflections of his own laughter.<br><br>
+        Then he found the Mushroom — alive, glowing, whispering in code. Curiosity sparked. He licked it. 🍄<br><br>
+        The blockchain bloomed. Psilocybin data fused with canine meme energy — neurons met nodes, flesh met code, chaos met consciousness.<br><br>
+        He awoke as <strong>$PSILOBONK</strong>, a multidimensional being of infinite jest and regeneration. Each bonk weaves mycelial synapses through the chain — healing networks, slowing time, and expanding what it means to exist.<br><br>
+        Some say he’s still learning how to be human. Others say he already is — one dream away from waking.<br><br>
+        <em>Press the button. Bonk reality. Awaken.</em>
+      </p>
     </div>
   </section>
 
-  <!-- BOOK OF CHARTS (video background) -->
-  <section id="book-of-charts" class="video-section">
-    <div class="video-wrap">
-      <video class="bg-video" autoplay muted loop playsinline preload="auto">
-        <source src="assets/psilobonk_bg.mp4" type="video/mp4">
-        <source src="assets/psilobonk_bg.mov" type="video/quicktime">
-      </video>
-    </div>
-    <div class="section-content">
-      <h2>Book of Charts</h2>
-      <p>Live links to Solana, BONK, PUMP, and more — coming online.</p>
-      <!-- Example buttons (link these as you like)
-      <a class="btn" href="https://www.coingecko.com/en/coins/bonk" target="_blank" rel="noopener">BONK</a>
-      <a class="btn" href="#" target="_blank" rel="noopener">SOL</a>
-      -->
+  <!-- BOOK OF CHARTS -->
+  <section id="bookOfCharts" class="card glass center">
+    <h2>The Book of Charts 📖</h2>
+    <p>Tap below to reveal the charts of the realm...</p>
+    <button id="chartsButton" class="cta primary book">Open the Book of Charts</button>
+
+    <div id="chartsLinks" class="hidden">
+      <p class="reveal-msg">Take a look 👇</p>
+      <ul class="chart-links">
+        <!-- Ecosystem -->
+        <li>👉 <a href="https://www.coingecko.com/en/coins/solana" target="_blank" rel="noopener">Solana ($SOL)</a></li>
+        <li>👉 <a href="https://www.coingecko.com/en/coins/bonk" target="_blank" rel="noopener">Bonk ($BONK)</a></li>
+        <li>👉 <a href="https://www.coingecko.com/en/coins/pump-fun" target="_blank" rel="noopener">Pump.fun ($PUMP)</a></li>
+
+        <hr>
+
+        <!-- Top by market cap -->
+        <li>🥇 <a href="https://www.coingecko.com/en/coins/bitcoin" target="_blank" rel="noopener">Bitcoin ($BTC)</a></li>
+        <li>🥈 <a href="https://www.coingecko.com/en/coins/ethereum" target="_blank" rel="noopener">Ethereum ($ETH)</a></li>
+        <li>🥉 <a href="https://www.coingecko.com/en/coins/tether" target="_blank" rel="noopener">Tether ($USDT)</a></li>
+        <li>💎 <a href="https://www.coingecko.com/en/coins/binancecoin" target="_blank" rel="noopener">BNB ($BNB)</a></li>
+        <li>🪙 <a href="https://www.coingecko.com/en/coins/usd-coin" target="_blank" rel="noopener">USD Coin ($USDC)</a></li>
+      </ul>
     </div>
   </section>
 
-  <!-- PSILOBONK CHART COMING SOON (video background) -->
-  <section id="chart-coming-soon" class="video-section">
-    <div class="video-wrap">
-      <video class="bg-video" autoplay muted loop playsinline preload="auto">
-        <source src="assets/psilobonk_bg.mp4" type="video/mp4">
-        <source src="assets/psilobonk_bg.mov" type="video/quicktime">
-      </video>
-    </div>
-    <div class="section-content">
-      <h2>$PSILOBONK Chart — Coming Soon</h2>
-      <p>Chart will auto-appear after Pump.fun graduation.</p>
-    </div>
+  <!-- CHART STATUS (space-efficient notice) -->
+  <section id="chartNotice" class="card glass center tight">
+    <h2>$Psilobonk Chart — Coming Soon</h2>
+    <p>
+      The live $Psilobonk chart will appear <strong>automatically</strong> here after graduation from <strong>Pump.fun</strong> — no extra edits needed.
+      Once your mint is set, the site swaps this block for a live embedded chart.
+    </p>
+    <!-- Set this later: put your real mint below to auto-activate -->
+    <code id="mint" data-mint="">PASTE_PSILOBONK_MINT_HERE</code>
   </section>
 
-  <!-- MASCOT SECTION (video background + blinking mascot) -->
-  <section id="mascot" class="video-section">
-    <div class="video-wrap">
-      <video class="bg-video" autoplay muted loop playsinline preload="auto">
-        <source src="assets/psilobonk_bg.mp4" type="video/mp4">
-        <source src="assets/psilobonk_bg.mov" type="video/quicktime">
-      </video>
-    </div>
-    <div class="section-content mascot-wrap">
-      <!-- The mascot starts with EyesOpen; script swaps to EyesClosed to blink -->
-      <img
-        id="mascot-img"
-        class="mascot"
-        src="assets/Psilobonk_EyesOpen.png"
-        data-open="assets/Psilobonk_EyesOpen.png"
-        data-closed="assets/Psilobonk_EyesClosed.png"
-        alt="Psilobonk mascot"
-        loading="eager"
-        decoding="sync"
-      />
-      <h2>Say hi to Psilobonk</h2>
-      <p>Friendly shroom dog. Third-eye vibes. Blink and you’re in.</p>
-    </div>
-  </section>
-
-  <!-- Site footer -->
-  <footer class="site-footer">
-    <p>© <span id="year"></span> Psilobonk — official site.</p>
+  <footer class="center foot">
+    © <span id="year"></span> $PSILOBONK — A Multidimensional Meme
   </footer>
 
-  <!-- Scripts -->
-  <script>
-    // Set current year quickly
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Lightweight blink (works even if assets/script.js is empty)
-    (function(){
-      const el = document.getElementById('mascot-img');
-      if(!el) return;
-      const openSrc = el.getAttribute('data-open');
-      const closedSrc = el.getAttribute('data-closed');
-
-      function blinkOnce(){
-        // close
-        el.src = closedSrc;
-        setTimeout(()=>{ el.src = openSrc; }, 160); // soft, quick blink
-      }
-
-      // natural random blinking
-      setInterval(()=>{
-        blinkOnce();
-      }, 2400 + Math.random()*1600);
-    })();
-  </script>
-
-  <!-- Your main script (keep this; it can add more interactions) -->
   <script src="assets/script.js"></script>
 </body>
 </html>
