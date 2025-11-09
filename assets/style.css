@@ -166,6 +166,8 @@ footer {
   max-width: 980px;
   margin: 0 auto;
   padding: 20px 12px 8px;
+  position: relative;    /* for hero background video */
+  overflow: hidden;
 }
 .hero-visual{
   display: flex;
@@ -246,4 +248,41 @@ footer {
 /* Footer safe-area so it doesn't sit under iPhone home bar */
 footer{
   padding-bottom: calc(20px + env(safe-area-inset-bottom));
+}
+
+/* ================================================================== */
+/*              🎞 Section/Hero background video helpers              */
+/* ================================================================== */
+.with-video{
+  position: relative;
+  overflow: hidden;
+}
+.with-video .bgv{
+  position: absolute;
+  inset: -2rem;                       /* slight overscan to avoid edges */
+  width: calc(100% + 4rem);
+  height: calc(100% + 4rem);
+  object-fit: cover;
+  z-index: -1;
+  opacity: .25;
+  filter: saturate(1.2) blur(6px);
+  pointer-events: none;
+}
+.hero .bgv{                           /* hero can be a tad clearer */
+  opacity: .22;
+  filter: saturate(1.25) blur(4px);
+}
+/* Subtle dark vignette over the video for readability */
+.with-video::after{
+  content:"";
+  position:absolute; inset:0;
+  z-index:-1;
+  background:
+    radial-gradient(120% 120% at 50% 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,.35) 70%),
+    linear-gradient(#00000055,#00000055);
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce){
+  .bgv{ display:none; }
 }
